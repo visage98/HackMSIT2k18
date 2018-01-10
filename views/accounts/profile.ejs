@@ -1,0 +1,52 @@
+<% layout('layout') %>
+<style>
+    body{
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        background-image: url("/images/pic1.jpg");
+        background-size:cover;
+    }
+    html{
+        width:100%;
+        height:100%;
+    }
+</style>
+<link rel="stylesheet" href="/css/landing.css">
+<script src="/js/profile.js"></script>
+
+<div class="container">
+
+    <div class="col-md-offset-3 col-md-6">
+        <div class="form-area">
+            <form method="post">
+                <br style="clear:both">
+                <h3 style="margin-bottom: 25px; text-align: center; border:black;font-family: 'Roboto', serif;font-size: 300%"><em>Profile</em></h3>
+                <div class="col-md-12 col-sm-12" style="margin-bottom: 10px">
+                    <img class="img-circle img-responsive img-center center-block" src="<%= user.profile.picture%>" alt="Avatar">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<%= user.profile.name%>" disabled required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="<%= user.email%>" disabled required>
+                </div>
+                <label for="dob" style="float: left">Date of Birth : </label>
+                <div class="form-group">
+                    <input type="date" class="form-control" id="dob" name="dob"  value="<%= user.profile.dob || ""%>">
+                </div>
+                <div class="form-group">
+                    <input type="tel" maxlength="10" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number"  value="<%= user.profile.mobile || ""%>">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="gender" name="gender" placeholder="Gender"  value="<%= user.profile.gender || ""%>" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" type="textarea" id="bio" placeholder="Bio" name="bio" maxlength="140" rows="7"><%= user.profile.Bio || ""%></textarea>
+                    <span class="help-block"><p id="characterLeft" class="help-block ">You have reached the limit</p></span>
+                </div>
+                <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<% layout('layout')%>
+
+<link rel="stylesheet" href="/css/stories.css">
+<script src="/js/stories.js">
+</script>
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
+<div class="container-fluid">
+    <div class="timeline col-md-9">
+        <div class="qa-message-list" id="wallmessages">
+            <% for(let i=0;i<stories.length;i++) { %>
+            <div class="message-item" id="m16">
+                <div class="message-inner">
+                    <div class="message-head clearfix">
+                        <% if(stories[i].author){%>
+                        <div class="avatar pull-left"><a href="#"><img class="img-pro" src="<%= stories[i].author.profile.picture%>"></a></div>
+                        <div class="user-detail">
+                            <h5 class="handle">
+                                <%= stories[i].author.profile.name%>
+                            </h5>
+                        <% } else { %>
+                            <div class="avatar pull-left"><a href="#"><img src="/images/anonymous.jpg"></a></div>
+                            <div class="user-detail">
+                                <h5 class="handle">
+                                    Anonymous
+                                </h5>
+                            <%}%>
+                            <div class="post-meta">
+                                <div class="asker-meta">
+                                    <span class="qa-message-what"></span>
+                                    <span class="qa-message-when">
+									<span class="qa-message-when-data"><%= stories[i].created_at%></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qa-message-content message-head">
+                        <%= stories[i].text%>
+                    </div>
+                        <% if(stories[i].media.photo){%>
+                        <img src="<%= stories[i].media.photo%>" class="img-tml">
+                        <%}%>
+                  </div>
+                </div>
+            <% } %>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="widget-area no-padding blank">
+                    <div class="status-upload">
+                        <form method="post">
+                            <textarea placeholder="Write a story." id="story-text" name="text"></textarea>
+                            <ul>
+                                <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+                                <li><input class="form-control" name="picture" type="url" style="width: 30vw;margin: 8px 0 0 10px" placeholder="URL"></li>
+                            </ul>
+                            <button type="submit" class="btn btn-success btn-lg green" id="share"><i class="fa fa-share"></i> Share</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>

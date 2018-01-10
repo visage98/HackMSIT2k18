@@ -1,0 +1,56 @@
+<% layout('layout')%>
+
+<style>
+    body{
+        background-image: url(/images/sign.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    html{
+        height: 100%;
+    }
+    h1{
+
+        font-family: 'Lato', sans-serif;
+        color:white;
+        font-weight: 700;
+        font-size: 3em;
+    }
+    hr{
+        border-top: 1px solid #f8f8f8;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+</style>
+
+<div class="container">
+    <h1>Login!</h1>
+    <hr>
+    <div class="row">
+        <div class="col-lg-6">
+            <% if(message.length>0) {%>
+            <div class="alert alert-danger alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <%= message%>
+            </div>
+            <%}%>
+            <form method="post">
+                <div class="form-group">
+                    <input class="form-control" name="email" type="email" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" name="password" type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg">Login</button>
+                </div>
+            </form>
+            <br>
+            <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook">
+                <span class="fa fa-facebook"></span> Sign in with Facebook
+            </a>
+            <a class="btn btn-block btn-social btn-google" href="/auth/google">
+                <span class="fa fa-google"></span> Sign in with Google
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+body{
+	background-image: url(/images/sign.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: 'Lato', sans-serif;
+    color:white;
+    padding-bottom: 20px;
+    
+}
+.shift{
+ margin : auto auto; 
+ 
+}
+.boom{
+    padding-top: 30px;
+}
+h2{
+	font-weight: 700;
+	font-size: 3em;
+	padding-left: 125px;
+}
+hr{
+	width: 400px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.boom{
+	
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+	             0px 8px 13px rgba(0,0,0,0.2),
+	             0px 18px 23px rgba(0,0,0,0.2);
+}
+html{
+	height: 100%;
+}
+.login{
+    padding-top: 200px;
+
+}
+
+.down{
+	padding-top: 30px;
+	padding-left: 100px;
+}

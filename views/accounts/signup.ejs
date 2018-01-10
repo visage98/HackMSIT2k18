@@ -1,0 +1,41 @@
+<% layout('layout')%>
+
+
+<link rel="stylesheet" href="/css/signup.css">
+<div class = "container boom shift ">
+    <h2>Sign Up!</h2>
+
+    <div class = "col-lg-6">
+        <% if(errors.length>0) {%>
+        <div class="alert alert-danger alert-dismissable">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+            <%= errors %>
+        </div>
+        <%}%>
+        <hr>
+        <form action="/signup" method="post">
+            <div class ="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Name" required>
+            </div>
+            <div class ="form-group">
+                <input type="email" class ="form-control" name="email" placeholder="Email" required>
+            </div>
+            <div class ="form-group">
+                <input type="password" class ="form-control" name="password" placeholder="Password" minlength="8" required>
+            </div>
+            <p style="border: black">By clicking Create Account, you agree to our Terms and confirm that you have read our Data Policy, including our Cookie Use Policy. You may receive SMS message notifications from De-Addict and can opt out at any time</p>
+
+            <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+        </form>
+        <br>
+        <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook">
+            <span class="fa fa-facebook"></span> Sign in with Facebook
+        </a>
+        <a class="btn btn-block btn-social btn-google" href="/auth/google">
+            <span class="fa fa-google"></span> Sign in with Google
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
