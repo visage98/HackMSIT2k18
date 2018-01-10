@@ -1,5 +1,5 @@
 module.exports = {
-    port : 7000,
+    port : 5000,
     database : "mongodb://root:abc123@ds251197.mlab.com:51197/anitaddict",
     secretKey : "Secret",
 
