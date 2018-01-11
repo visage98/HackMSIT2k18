@@ -217,7 +217,9 @@ router.get('/feed',checkLoggedIn, function (req, res) {
 
 router.post('/feed', function (req, res, next) {
     let story = new Story();
-    story.author = req.user._id;
+    if(req.body.checkbox!=="yes"){
+        story.author = req.user._id;
+    }
     story.text = req.body.text;
     story.created_at = moment().format("MMM Do YY");
     if(req.body.picture)
