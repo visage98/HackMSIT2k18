@@ -1,5 +1,7 @@
 # De-Addict
 
+#### Link to the website : https://hackmsit.herokuapp.com/
+
 ## Instuctions to setup
 1. Clone the repostiory on your system
 2. Open /HackMSIT2k18/config/config.js
